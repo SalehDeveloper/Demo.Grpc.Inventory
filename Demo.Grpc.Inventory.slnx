@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Console.gRPC.Inventory/Console.gRPC.Inventory.csproj" Id="1fa2d1dc-fb94-46ba-b4d3-0a5b3dcdefc4" />
+  <Project Path="Customer.gRPC/Customer.gRPC.csproj" />
+  <Project Path="Order.gRPC/Order.gRPC.csproj" />
+</Solution>

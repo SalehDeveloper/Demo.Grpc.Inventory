@@ -1,0 +1,36 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+option csharp_namespace = "Customer.gRPC.Protos";
+
+package customer.v1;
+
+
+service Customer{
+ 
+  rpc Create(CreateCustomerRequest ) returns (CreateCustomerResponse);
+
+  rpc GetCustomer(GetCustomerRequest) returns (GetCustomerResponse);
+}
+
+message GetCustomerRequest {
+	string id = 1;
+}
+
+message GetCustomerResponse {
+	string id = 1;
+	string name = 2;
+	string address = 3;
+	google.protobuf.Timestamp date_of_birth = 4;
+	optional string secondary_address = 5;
+}
+
+message CreateCustomerRequest {
+	string name = 1;
+	string address = 2;
+	google.protobuf.Timestamp date_of_birth = 3;
+	optional string secondary_address = 4; 
+}
+
+message CreateCustomerResponse {
+	string message=1 ;
+}
