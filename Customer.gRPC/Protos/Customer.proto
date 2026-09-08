@@ -10,6 +10,10 @@ service Customer{
   rpc Create(CreateCustomerRequest ) returns (CreateCustomerResponse);
 
   rpc GetCustomer(GetCustomerRequest) returns (GetCustomerResponse);
+
+  rpc GetCustomers(GetCustomersRequest) returns (GetCustomersResponse);
+
+  rpc UpdateCustomer(UpdateCustomerRequest) returns (UpdateCustomerResponse);
 }
 
 message GetCustomerRequest {
@@ -33,4 +37,23 @@ message CreateCustomerRequest {
 
 message CreateCustomerResponse {
 	string message=1 ;
+}
+
+message GetCustomersRequest {
+}
+
+message GetCustomersResponse {
+	repeated GetCustomerResponse customers = 1;
+}
+
+message UpdateCustomerRequest {
+	string id = 1;
+	string name = 2;
+	string address = 3;
+	google.protobuf.Timestamp date_of_birth = 4;
+	optional string secondary_address = 5;
+}
+
+message UpdateCustomerResponse {
+	string message = 1;
 }

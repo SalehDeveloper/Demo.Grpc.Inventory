@@ -1,6 +1,6 @@
 ﻿namespace Customer.gRPC.Data
 {
-    public  sealed class Customer
+    public sealed class Customer
     {
         private Customer(Guid id, string name, string address, DateTime dateOfBirth, string? secondaryAddress)
         {
@@ -23,9 +23,17 @@
         public string? SecondaryAddress { get; private set; }
 
 
-       public static Customer Create( string name, string address, DateTime dateOfBirth, string? secondaryAddress)
+        public static Customer Create(string name, string address, DateTime dateOfBirth, string? secondaryAddress)
         {
             return new Customer(Guid.NewGuid(), name, address, dateOfBirth, secondaryAddress);
+        }
+
+        public void Update(string name, string address, DateTime dateOfBirth, string? secondaryAddress)
+        {
+            Name = name;
+            Address = address;
+            DateOfBirth = dateOfBirth;
+            SecondaryAddress = secondaryAddress;
         }
 
     }
