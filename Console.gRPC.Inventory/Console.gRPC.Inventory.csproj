@@ -7,6 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="language.proto" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Google.Protobuf" Version="3.36.1" />
 		<PackageReference Include="Grpc.AspNetCore.Server.ClientFactory" Version="2.83.0" />
@@ -19,6 +23,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Protobuf Include="language.proto">
+		  <GrpcServices>Client</GrpcServices>
+		</Protobuf>
 		<Protobuf Include="order.proto" GrpcServices="Client" />
 	</ItemGroup>
 

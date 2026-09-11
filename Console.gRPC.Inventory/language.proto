@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "Order.gRPC.Protos";
+
+package language.v1;
+
+message LanguageData {
+  string language_code = 1;
+}

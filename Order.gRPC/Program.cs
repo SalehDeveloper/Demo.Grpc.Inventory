@@ -1,8 +1,3 @@
-
-
-
-using Customer.gRPC.Protos;
-using Google.Protobuf.WellKnownTypes;
 using Microsoft.EntityFrameworkCore;
 using Order.gRPC.Data;
 using Order.gRPC.Interceptors;
@@ -18,6 +13,8 @@ builder.Services.AddDbContext<OrderDbContext>(options =>
 builder.Services.AddGrpc(Option =>
 {
     Option.Interceptors.Add<LanguageInterceptor>();
+    Option.Interceptors.Add<TimeInterceptor>();
+
 });
 builder.Services.AddGrpcClient<Customer.gRPC.Protos.Customer.CustomerClient>(o =>
 {
